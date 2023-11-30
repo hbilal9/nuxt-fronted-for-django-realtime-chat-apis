@@ -1,3 +1,3 @@
-[submodule "core"]
-	path = core
-	url = https://github.com/hbilal9/nuxt-next-fronted-for-django-realtime-chat-apis.git
+[submodule "backend"]
+	path = backend
+	url = https://github.com/hbilal9/django-realtime-chat-apis.git
