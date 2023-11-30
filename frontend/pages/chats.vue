@@ -24,7 +24,7 @@ type Thread = {
 }
 
 type Message = {
-    send_from: number,
+    sender: number,
     thread_id: number,
     text: string,
 }
@@ -174,7 +174,7 @@ definePageMeta({
                                 v-for="(msg, i) in messages"
                                 :key="i"
                                 class="p-4 rounded-lg w-60 mb-1"
-                                :class="msg.send_from == authStore.user.id ? 'self-end bg-green-200' : 'self-start bg-gray-200 '"
+                                :class="msg.sender == authStore.user.id ? 'self-end bg-green-200' : 'self-start bg-gray-200 '"
                             >
                                 {{ msg.text }}
                             </span>
