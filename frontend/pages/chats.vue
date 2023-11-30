@@ -34,6 +34,7 @@ const threads = ref<Thread[]>([] as Thread[])
 const selectedThread = ref<Thread>()
 
 const changeChat = (threadId: number) => {
+    getMessages(threadId)
     chatData.thread_id = threadId + ''
     threads.value = threads.value.filter(thread => {
         if (thread.id == threadId){
@@ -120,6 +121,14 @@ const sendMsg = async () => {
         })
     )
     chatData.text = ''
+}
+
+const getMessages = async (id: number) => {
+    const { data, pending, error } = await useHttp.get(`chats/${id}/messages/`)
+
+    if(data?.value){
+        messages.value = data.value as Message[]
+    }
 }
 
 definePageMeta({
