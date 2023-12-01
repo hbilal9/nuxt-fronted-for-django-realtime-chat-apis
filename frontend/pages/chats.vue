@@ -74,8 +74,8 @@ onMounted(() => {
                     }
                     else if(typeof(data.first_person) == 'object' && typeof(data.second_person) == 'number'){
                         // console.log('1st person is online' )
-                        (thread.first_person as ThreadUser).active_status = data.first_person.active_status
-                        (thread.first_person as ThreadUser).last_seen = data.first_person.last_seen
+                        // (thread.first_person as ThreadUser).active_status = data.first_person.active_status
+                        // (thread.first_person as ThreadUser).last_seen = data.first_person.last_seen
                         if (typeof(thread.first_person) == 'object'){
                             thread.first_person.active_status = data.first_person.active_status
                             thread.first_person.last_seen = data.first_person.last_seen
